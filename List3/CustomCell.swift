@@ -13,10 +13,13 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var Photo: UIImageView!
     @IBOutlet weak var Label: UILabel!
     
+
     
+    /*何番目に表示されたセルかラベルに表示する*/ /*セルに表示するデータの制御*/
     func cellControllView(number: IndexPath){
         self.Label.text = String((number.row)+1)
         self.Photo.image = UIImage(named: "2.JPG")
+
     }
     
     //    override func awakeFromNib() {

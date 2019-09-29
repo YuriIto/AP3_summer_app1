@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,22 +13,39 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="List3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mxI-ZZ-cyV">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="6Q7-m1-B0z"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yvb-xn-cN9"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfn-I7-fe7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Time Line" id="BVL-G2-yJk">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qLy-Le-70m">
+                                            <connections>
+                                                <segue destination="7aa-bx-FQV" kind="presentation" modalTransitionStyle="flipHorizontal" id="4p3-u6-6ui"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MwX-ie-Hzn"/>
                     <connections>
                         <outlet property="myTable" destination="mxI-ZZ-cyV" id="h2b-ek-fpd"/>
                     </connections>
@@ -39,20 +54,66 @@
             </objects>
             <point key="canvasLocation" x="48.799999999999997" y="78.710644677661179"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Picker View Controller-->
         <scene sceneID="Uue-kC-T8N">
             <objects>
-                <viewController id="7aa-bx-FQV" sceneMemberID="viewController">
+                <viewController id="7aa-bx-FQV" customClass="ImagePickerViewController" customModule="List3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9YD-Ue-ChD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O85-vK-fiZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Post" id="kgC-Yo-Twz">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="0Ve-lY-Pst">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="R9C-aS-Atf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-F0-sXC">
+                                <rect key="frame" x="97.5" y="303.5" width="180" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="g6Q-YJ-zfh"/>
+                                    <constraint firstAttribute="height" constant="100" id="uWx-ad-vYF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="あ:" destination="OcP-vw-oUh" eventType="editingDidEnd" id="Ufg-xn-A78"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCQ-Zk-JTe">
+                                <rect key="frame" x="169" y="465" width="37" height="30"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterButton:" destination="7aa-bx-FQV" eventType="touchUpInside" id="9p2-Sr-nAF"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7so-Ze-zNX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hCQ-Zk-JTe" firstAttribute="centerX" secondItem="9YD-Ue-ChD" secondAttribute="centerX" id="Llx-rn-Bdu"/>
+                            <constraint firstItem="vMx-F0-sXC" firstAttribute="top" secondItem="9YD-Ue-ChD" secondAttribute="topMargin" constant="303.5" id="OAr-Is-gG9"/>
+                            <constraint firstItem="hCQ-Zk-JTe" firstAttribute="top" secondItem="9YD-Ue-ChD" secondAttribute="topMargin" constant="465" id="ZQ5-li-OxW"/>
+                            <constraint firstItem="vMx-F0-sXC" firstAttribute="centerX" secondItem="9YD-Ue-ChD" secondAttribute="centerX" id="vlN-bn-KsS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e3n-oe-94O"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QOe-uc-Ulf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCj-pU-3Yr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OcP-vw-oUh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="814" y="79"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R9C-aS-Atf"/>
+    </inferredMetricsTieBreakers>
 </document>
