@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="List3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeline" id="BYZ-38-t0r" customClass="ViewController" customModule="List3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                                     <navigationItem title="Post" id="kgC-Yo-Twz">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="0Ve-lY-Pst">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="R9C-aS-Atf"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="f99-Fr-r2i"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -92,7 +92,7 @@
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="enterButton:" destination="7aa-bx-FQV" eventType="touchUpInside" id="9p2-Sr-nAF"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7so-Ze-zNX"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="AQb-7U-Eng"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,10 +110,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCj-pU-3Yr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OcP-vw-oUh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="814" y="79"/>
+            <point key="canvasLocation" x="1097" y="79"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R9C-aS-Atf"/>
+        <segue reference="AQb-7U-Eng"/>
     </inferredMetricsTieBreakers>
 </document>

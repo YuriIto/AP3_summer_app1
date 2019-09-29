@@ -15,10 +15,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     @IBOutlet weak var myTable: UITableView!
-
+    var img: UIImage!
     /*表示するセルの数を指定する*/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
  
@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellContents = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as! CustomCell
         cellContents.cellControllView(number: indexPath)
+        cellContents.imageData = img
         return cellContents
     }
 
@@ -56,11 +57,15 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
     var picker: UIImagePickerController!
     var button: UIButton!
     
-    var selectPhoto = [String]()
+    var img:UIImage!
     
     @IBAction func enterButton(_ sender: Any) {
+        let CcellimageData = self.storyboard?.instantiateViewController(withIdentifier: "timeline") as! ViewController
         
-    }
+        CcellimageData.img = img
+        self.present(CcellimageData, animated: true, completion: nil)
+        }
+    
         override func viewDidLoad() {
 //            view.backgroundColor = .white
             
@@ -102,9 +107,6 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
             
             button.backgroundColor = .gray
             view.addSubview(button)
-            
-            
-            
     }
 
     /*ボタン内で画面から指を離した時に...*/
@@ -117,7 +119,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             //ユーザが編集した写真を取得する
             button.setBackgroundImage(editedImage, for: .normal) //背景に画像をセット
-          
+            self.img = editedImage
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             //選択した写真を取得する
             button.setBackgroundImage(originalImage, for: .normal) //背景に画像をセット
